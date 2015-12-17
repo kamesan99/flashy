@@ -10,7 +10,7 @@ $user_login = new USER();
 
 if($user_login->is_logged_in()!="")
 {
-	$user_login->redirect('home.php');
+	$user_login->redirect('account.php');
 }
 
 if(isset($_POST['btn-login']))
@@ -20,7 +20,7 @@ if(isset($_POST['btn-login']))
 	
 	if($user_login->login($email,$upass))
 	{
-		$user_login->redirect('home.php');
+		$user_login->redirect('account.php');
 	}
 }
 
@@ -50,18 +50,17 @@ $total = $_POST['total'];
 $count = $_POST['counter'];
 $percentage = ($count / $total)*100;
 }
-?>
+?>	
 
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <!-- Basic Page Needs
     ================================================== -->
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Products - Skeets</title>
+    <title>Index - Skeets</title>
     <meta name="description" content="Angle - Blog is a clean and minimalist photography blog perfectly designed for photographers and bloggers. Slimply is beautiful, clean and very classic design.">
     <meta name="keywords" content="photoblog, portfolio, photography, photographer, unique, creative, blog, minimal, beautiful theme">
     <meta name="author" content="Laza Themes">
@@ -128,59 +127,6 @@ $percentage = ($count / $total)*100;
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-<!-- 		<!- Support Online -->
-		<div id="rst-support-online" class="animated fadeIn">
-			<form action="shortcodes.html" class="animated fadeInDownBig">
-				<header>
-					<p><i class="fa fa-comment-o"></i>Live Support Chat</p>
-					<a href="#"><i class="fa fa-times"></i></a>
-				</header>
-				<h6>You are chatting with <b>Support Team</b></h6>
-				<div class="rst-chat-content">
-					<ul>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name">Support Team</p>
-							<p class="rst-say">Duis vel tellus sed dolor sodales?</p>
-						</li>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name rst-you">You</p>
-							<p class="rst-say">Duis vel tellus sed dolor..</p>
-						</li>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name">Support Team</p>
-							<p class="rst-say">Duis vel tellus sed dolor sodales?</p>
-						</li>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name rst-you">You</p>
-							<p class="rst-say">Duis vel tellus sed dolor..</p>
-						</li>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name">Support Team</p>
-							<p class="rst-say">Duis vel tellus sed dolor sodales?</p>
-						</li>
-						<li>
-							<img class="img-circle" src="http://placehold.it/299x299" alt="" />
-							<p class="rst-name rst-you">You</p>
-							<p class="rst-say">Duis vel tellus sed dolor..</p>
-						</li>
-					</ul>
-				</div>
-				<div class="rst-chat-input">
-					<input type="text" name="support-message" id="support-message" placeholder="Type your message ..." />
-					<span class="btn btn-primary btn-file">
-						<img src="images/icon//livechat-submit.png" alt="" /><input type="file" name="support-upload" id="support-upload" />
-					</span>
-					<input type="submit" value="SEND" />
-				</div>
-			</form>
-		</div>
-		<!-- Support Online -->
-	
 		<!-- Header -->
 		<header id="rst-header">
 		
@@ -198,18 +144,18 @@ $percentage = ($count / $total)*100;
 					<div class="rst-line-reg-setting">
 						
 						<!-- Account settings -->
-						<!-- <div class="rst-account">
+						<div class="rst-account">
 							<a href="#"><img class="img-circle" src="http://placehold.it/299x299" alt="" />liza doe<i class="fa fa-angle-down"></i></a>
 							<ul>
 								<li><a href="account.html"><i class="fa fa-user"></i>setting</a></li>
 								<li><a href="#"><i class="fa fa-arrow-circle-o-left"></i>Log out</a></li>
 							</ul>
-						</div>  -->
+						</div> 
 						<!-- Account settings -->
 						
 						<!-- Login -->
 						<div class="rst-login">
-							<a>Sign in<i class="fa fa-angle-down"></i></a>
+							<a href="#">Sign in<i class="fa fa-angle-down"></i></a>
 							<?php 
 							if(isset($_GET['inactive']))
 							{
@@ -237,7 +183,7 @@ $percentage = ($count / $total)*100;
 								<input type="password" placeholder="Password" name="txtupass" class="text required" placeholder="Password" required />
 								<input type="submit" name="btn-login" value="sign in"/>
 								<p>Not have an Account? <a href="register.php">Register</a></p>
-								<a href="fpass.php">Lost your Password ? </a>
+								<p><a href="fpass.php">Forgot your Password ? </a></p>
 							</form>
 						</div>
 						<!-- Login -->
@@ -263,33 +209,33 @@ $percentage = ($count / $total)*100;
 				<div class="rst-header-menu-bar">
 					<div class="container">
 						<div class="rst-header-logo">
-							<a href="index.html"><img src="images/header-logo-2.png" alt="" /></a>
-							<a class="rst-logo-sticky" href="index.html"><img src="images/header-logo-2.png" alt="" /></a>
+							<a href="index.php"><img src="images/header-logo-2.png" alt="" /></a>
+							<a class="rst-logo-sticky" href="index.php"><img src="images/header-logo-2.png" alt="" /></a>
 						</div>
-						<nav class="rst-header-menu">
-							<button class="rst-menu-trigger">
-								<span>Toggle navigation</span>
-							</button>
-							<ul>
-								<li><a href="about.html">About</a></li>
-								<li class="current-menu-item"><a href="products.html">Products</a></li>
-								<li>
-									<a href="#">Pages</a>
-									<ul>
-										<li><a href="prices.html">Prices</a></li>
-										<li><a href="category.html">Category</a></li>
-										<li><a href="shortcodes.html">Shortcodes</a></li>
-										<li><a href="faq.html">FAQs</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-							<a class="btn btn-mds btn-success" type="button" href="register.php">Register</a>
-						</nav>
-						<div class="clear"></div>
+							<nav class="rst-header-menu">
+								<button class="rst-menu-trigger">
+									<span>Toggle navigation</span>
+								</button>
+								<ul>
+									<li><a href="about.html">About</a></li>
+									<li class="current-menu-item"><a href="flashcards.php">Flashcards</a></li>
+			<!-- 					<li>
+										<a href="#">Pages</a>
+										<ul>
+											<li><a href="prices.html">Prices</a></li>
+											<li><a href="category.html">Category</a></li>
+											<li><a href="shortcodes.html">Shortcodes</a></li>
+											<li><a href="faq.html">FAQs</a></li>
+										</ul>
+									</li> -->
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<a class="btn btn-mds btn-success" type="button" href="register.php">Register</a>
+							</nav>
 					</div>
 				</div>
 				<!-- Menu bar -->
+
 
 		<?php 
 		if(isset($_GET['inactive']))

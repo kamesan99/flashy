@@ -157,9 +157,8 @@
     </div> <!-- /container -->
 
 
-     <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-progressbar.js"></script>
 
     <script type="text/javascript">
 
@@ -169,31 +168,29 @@
         });
         });
 
-
-
-        // Set up an event listener for the contact form. By clicking next add +1 and show the next word
-        $("#next").click(function(event) {
-            // Stop the browser from submitting the form.
-            event.preventDefault();
-            // Serialize the form data.
+		$("#next").click(function(event) { 
+		 	 event.preventDefault();
             var maxNext = "<?php echo $total; ?>";
             var startElement = $("#counter");
             var value = parseInt(startElement.val());
             if (value <= maxNext) {
             startElement.val(value + 1)};
             var formData = $("#shuffle").serialize();
-            // Submit the form using AJAX.
-            $.ajax({
-                type: 'POST',
-                url: 'display.php',
-                data: formData,
-                context: '#fc',
-                success: function(data) {
-                    $("#fc").empty().append(data);
-                }
-            });
+			var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
+		});
 
-        });
 
         // Set up an event listener for the contact form. By clicking previous substract -1 and show the previous word
        $("#previous").click(function(event) {
@@ -205,16 +202,19 @@
             if (value > 1) {
             startElement.val(value - 1)};
             var formData = $("#shuffle").serialize();
-            // Submit the form using AJAX.
-            $.ajax({
-                type: 'POST',
-                url: 'display.php',
-                data: formData,
-                context: '#fc',
-                success: function(data) {
-                    $("#fc").empty().append(data);
-                }
-            });
+           	var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
 
         });
 
@@ -226,17 +226,19 @@
             var value = parseInt(startElement.val());
             startElement.val(value - value + 1)
             var formData = $("#shuffle").serialize();
-            // Submit the form using AJAX.
-            $.ajax({
-                type: 'POST',
-                url: 'display.php',
-                data: formData,
-                context: '#fc',
-                success: function(data) {
-                    $("#fc").empty().append(data);
-                }
-            });
-
+           	var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
         });
 
               $("#last").click(function(event) {
@@ -248,17 +250,19 @@
             var value = parseInt(startElement.val());
             startElement.val(value = maxNext)
             var formData = $("#shuffle").serialize();
-            // Submit the form using AJAX.
-            $.ajax({
-                type: 'POST',
-                url: 'display.php',
-                data: formData,
-                context: '#fc',
-                success: function(data) {
-                    $("#fc").empty().append(data);
-                }
-            });
-
+           	var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
         });
 
        // Use keyboard arrows instead of buttons

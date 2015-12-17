@@ -586,7 +586,12 @@ p {
   box-shadow:         inset 0px 13px 5px -5px rgba(50, 50, 50, 0.03);
 }
 .rst-header-banner.rst-banner-background .rst-banner-content {
-  padding: 88px 0 120px;
+  padding: 20px 0 120px;
+  position: relative;
+  text-align: center;
+}
+.rst-header-banner.rst-banner-background .rst-banner-content {
+  padding: 20px 0 120px;
   position: relative;
   text-align: center;
 }
@@ -627,12 +632,12 @@ p {
 }
 .rst-header-banner.rst-banner-background
 {
-  background: url('../images/blur.jpg') no-repeat top center;
+  background: url('https://placeholdit.imgix.net/~text?txtsize=75&txt=%20&w=300&h=300&txttrack=0') no-repeat top center;
   background-size: cover;
 }
 .rst-header-banner.rst-banner-background.rst-banner-2
 {
-  background: url('../images/bamboo_blur.jpg') no-repeat top center;
+  background: url('https://placeholdit.imgix.net/~text?txtsize=75&txt=%20&w=300&h=300&txttrack=0') no-repeat top center;
   background-size: cover;
 }
 .rst-back-post a {
@@ -3388,7 +3393,7 @@ cite {
 
 /* index page */
 .rst-header-banner.rst-banner-background.rst-index-page-banner {
-  background: url("https://placeholdit.imgix.net/~text?txtsize=75&txt=%20&w=300&h=300&txttrack=0") no-repeat scroll center top / cover ;
+  background: url('../images/bridges.jpg') no-repeat scroll center top / cover ;
 }
 .rst-index-page-banner .rst-search-form {
   margin: 95px 0 167px;

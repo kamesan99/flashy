@@ -2,16 +2,14 @@
 require_once 'class.user.php';
 require_once 'dbconfig.php';
 require_once 'class.crud.php';
-
+extract($_POST);
 $decks = new FlashCard();
 // get total
-if(isset($_POST['total']) && isset($_POST['category']) && isset($_POST['counter']))
-{
-$c = $_POST['category'];
-$total = $_POST['total'];
-$count = $_POST['counter'];
+$c = $category;
+$total = $total;
+$count = $counter;
 $percentage = ($count / $total)*100;
-}
+
 
 // Display the Flashcards
 if($count<=$total)
@@ -26,7 +24,7 @@ if($count<=$total)
     </div>
     <div class='back'>
       <p>
-      <? $decks->viewBack($count, $total, $c); ?>
+      <? echo $decks->viewBack($count, $total, $c); ?>
       </p>
     </div>
   </div>  

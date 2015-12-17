@@ -61,12 +61,9 @@ if(isset($_POST['btn-signup']))
 	}
 }
 
-
-
 ?>
 
-
-		</header>
+</header>
 		
 		<!-- Main page -->
 		<section>

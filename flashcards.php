@@ -1,24 +1,25 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
 include('includes/header.php');
-require_once 'class.user.php';
 ?>
-
 				
 				<!-- Banner content -->
 				<div class="rst-banner-content">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-6">
-								<div class="text-left">
-									<h5>Search by topic</h5>	
+								<div class="text-left">	
 									<h1>Flashcard database</h1>
+									<h5>Search by topic</h5>
 								</div>
 							</div>
 							<div class="col-sm-6">
-								<form action="flashcards.php?page=1" method="get" class="rst-search-form rst-search">
-									<input type="text" placeholder="Search ..."  name="s" value="<?php if (isset($_GET['s'])) { echo $_GET['s']; } ?>">
-									<button type="submit"  class="sb"><i class="fa fa-long-arrow-right"></i></button>
+								<form action="" method="get" class="rst-search-form rst-search">
+									<div class="rst-si">
+										<input type="text" placeholder="Search ..."  name="s" value="<?php if (isset($_GET['s'])) { echo $_GET['s']; } ?>">
+										<span class="rst-artinbase"><b><?php echo $decks->countCardsTotal();?></b> flashcards</span>
+										<i class="fa fa-search rst-search-icon"></i>
+										<button type="submit" class="sb"><i class="fa fa-long-arrow-right"></i></button>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -36,11 +37,10 @@ require_once 'class.user.php';
 		<section>
 			
 			<!-- Breadcrumb bar -->
-			<div class="rst-breadcrumb-bar">
+<!-- 			<div class="rst-breadcrumb-bar">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 col-lg-6">
-							<p><b><?php echo $decks->countCardsTotal();?></b> Flashcards</p>
 						</div>
 						<div class="col-sm-12 col-lg-6">
 							<ul class="breadcrumb">
@@ -52,7 +52,7 @@ require_once 'class.user.php';
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- Breadcrumb bar -->
 			
 			<!-- Single Content -->
