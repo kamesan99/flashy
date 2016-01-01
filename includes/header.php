@@ -20,7 +20,6 @@ $user_login = new USER();
 	$user_login->redirect('account.php');
 }*/
 
-
 if(isset($_POST['btn-login']))
 {
 	$email = trim($_POST['txtemail']);

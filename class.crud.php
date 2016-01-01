@@ -16,24 +16,6 @@ class crud
 		$this->conn = $db;
     }
 	
-	public function create($english, $spanish)
-	{
-		try
-		{
-			$stmt = $this->conn->prepare("INSERT INTO tbl_en_es(english, spanish) VALUES(:english, :spanish)");
-			$stmt->bindparam(":english",$english);
-			$stmt->bindparam(":spanish",$spanish);
-			$stmt->execute();
-			return true;
-		}
-		catch(PDOException $e)
-		{
-			echo $e->getMessage();	
-			return false;
-		}
-		
-	}
-	
 	public function getID($id)
 	{
 		$stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE id=:id");
@@ -184,6 +166,41 @@ class FlashCard
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->conn = $db;
     }
+
+    //Create a new Flashcard deck
+
+	public function create($front, $back, $cardId, $userId, $topic_id, $title, $description)
+	{
+		try
+		{
+			$stmt = $this->conn->prepare("INSERT INTO tbl_decks(deck_name, description, topic_id, user_id) VALUES(:deck_name, :description, :topic_id, :user_id)");
+			$stmt->bindparam(":deck_name",$title);
+			$stmt->bindparam(":description",$description);
+			$stmt->bindparam(":topic_id",$topic_id);
+			$stmt->bindparam(":user_id",$userId);
+			$stmt->execute();
+			$id = $this->conn->lastInsertId();
+			echo $id;
+
+			$stmt = $this->conn->prepare("INSERT INTO tbl_cards(card_id, front, back, user_id, deck_id) VALUES(:card_id, :front, :back, :user_id, :deck_id)");
+			$stmt->bindparam(":front",$front);
+			$stmt->bindparam(":back",$back);
+			$stmt->bindparam(":user_id",$userId);
+			$stmt->bindparam(":card_id",$cardId);
+			$stmt->bindparam(":deck_id",$id);
+			$stmt->execute();
+
+			return true;
+			echo "New records created successfully";
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+		
+	}
+
    	//Count Flashcards specific deck
 	public function countCards($c)
 	{
