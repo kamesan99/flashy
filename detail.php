@@ -31,8 +31,11 @@ include('includes/header.php');
 		<div class="clearfix"></div><br />
 
 
+		<div id="myElement"></div>
+
+
 		<div id="fc" class="container">
-			<div class='stage'>
+			<div class='first stage'>
 			  <div class='flashcard'>
 			    <div class='front'>
 			      <p> 

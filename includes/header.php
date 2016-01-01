@@ -8,20 +8,34 @@ require_once 'class.crud.php';
 $decks = new FlashCard();
 $user_login = new USER();
 
-if($user_login->is_logged_in()!="")
+
+/*if($user_login->is_logged_in()!="" && $_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].'/account.php')
 {
 	$user_login->redirect('account.php');
-}
+	exit();
+}*/
+
+/*if($user_login->is_logged_in()!="")
+{
+	$user_login->redirect('account.php');
+}*/
+
 
 if(isset($_POST['btn-login']))
 {
 	$email = trim($_POST['txtemail']);
 	$upass = trim($_POST['txtupass']);
-	
-	if($user_login->login($email,$upass))
+
+	if($user_login->login($email,$upass) && $_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].'/account.php')
 	{
 		$user_login->redirect('account.php');
 	}
+}
+
+// show username, email and password if user is logged in
+if ($user_login->is_logged_in() == 1)
+{
+	list($username,$email,$password) = $user_login->getMember($_SESSION['userSession']);
 }
 
 // add +1 to php variable counter
@@ -50,6 +64,7 @@ $total = $_POST['total'];
 $count = $_POST['counter'];
 $percentage = ($count / $total)*100;
 }
+
 ?>	
 
 <!DOCTYPE html>
@@ -139,46 +154,33 @@ $percentage = ($count / $total)*100;
 							<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fa fa-behance"></i></a></li>
-						</ul>
+						</ul>						
 					</div>
 					<div class="rst-line-reg-setting">
-						
+
+					<?php
+					if($user_login->is_logged_in())
+					{ ?>
+					
 						<!-- Account settings -->
 						<div class="rst-account">
-							<a href="#"><img class="img-circle" src="http://placehold.it/299x299" alt="" />liza doe<i class="fa fa-angle-down"></i></a>
+							<a href="#"><img class="img-circle" src="http://placehold.it/299x299" alt="" /><?php echo $username ?><i class="fa fa-angle-down"></i></a>						
 							<ul>
-								<li><a href="account.html"><i class="fa fa-user"></i>setting</a></li>
-								<li><a href="#"><i class="fa fa-arrow-circle-o-left"></i>Log out</a></li>
+								<li><a href="account.php"><i class="fa fa-user"></i>setting</a></li>
+								<li><a href="logout.php"><i class="fa fa-arrow-circle-o-left"></i>Log out</a></li>
 							</ul>
 						</div> 
 						<!-- Account settings -->
-						
-						<!-- Login -->
+
+					<?php } 
+
+					else { ?>
+
+					<!-- Login -->
 						<div class="rst-login">
 							<a href="#">Sign in<i class="fa fa-angle-down"></i></a>
-							<?php 
-							if(isset($_GET['inactive']))
-							{
-								?>
-					            <div class='alert alert-error'>
-									<button class='close' data-dismiss='alert'>&times;</button>
-									<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it. 
-								</div>
-					            <?php
-							}
-							?>
-							<form class="form-signin" method="post">
-								      <?php
-								        if(isset($_GET['error']))
-										{
-											?>
-								            <div class='alert alert-success'>
-												<button class='close' data-dismiss='alert'>&times;</button>
-												<strong>Wrong Details!</strong> 
-											</div>
-								            <?php
-										}
-										?>
+
+							<form class="form-signin" method="post">							   
 								<input type="email" placeholder="Email address" name="txtemail"  class="text required email" required />
 								<input type="password" placeholder="Password" name="txtupass" class="text required" placeholder="Password" required />
 								<input type="submit" name="btn-login" value="sign in"/>
@@ -186,7 +188,11 @@ $percentage = ($count / $total)*100;
 								<p><a href="fpass.php">Forgot your Password ? </a></p>
 							</form>
 						</div>
-						<!-- Login -->
+					<!-- Login -->
+
+
+					<?php } ?>
+						
 						
 						<div class="rst-languages">
 							<a href="#">English<i class="fa fa-angle-down"></i></a>
@@ -201,6 +207,12 @@ $percentage = ($count / $total)*100;
 				</div>
 			</nav>
 			<!-- Register bar -->
+
+			<?php
+			$fn = basename($_SERVER['PHP_SELF']);
+
+			if ($fn !== 'index.php')
+			{ ?>
 			
 			<!-- Header banner -->
 			<div class="rst-header-banner rst-banner-background rst-banner-2">
@@ -235,28 +247,4 @@ $percentage = ($count / $total)*100;
 					</div>
 				</div>
 				<!-- Menu bar -->
-
-
-		<?php 
-		if(isset($_GET['inactive']))
-		{
-			?>
-            <div class='alert alert-error'>
-				<button class='close' data-dismiss='alert'>&times;</button>
-				<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it. 
-			</div>
-            <?php
-		}
-		?>
-        <form class="form-signin" method="post">
-        <?php
-        if(isset($_GET['error']))
-		{
-			?>
-            <div class='alert alert-success'>
-				<button class='close' data-dismiss='alert'>&times;</button>
-				<strong>Wrong Details!</strong> 
-			</div>
-            <?php
-		}
-		?>
+			<?php } ?>

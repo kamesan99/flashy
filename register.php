@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
-include('includes/header.php');
+require_once ('includes/header.php');
 require_once 'class.user.php';
 
 $reg_user = new USER();

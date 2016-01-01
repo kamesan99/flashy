@@ -384,7 +384,4 @@ class FlashCard
 	  }
 	}
  	//Navigation end
-
-
 }
-

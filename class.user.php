@@ -100,11 +100,33 @@ class USER
 	{
 		header("Location: $url");
 	}
+
+	public function getMember($userID)
+	{
+
+	// Get all the member info 
+	$query = "SELECT * FROM tbl_users WHERE userID=:ID LIMIT 1";
+	$stmt = $this->conn->prepare($query);
+	$stmt->bindparam(":ID",$userID);
+	$stmt->execute();
+
+
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		$username = $row['userName'];
+		$email = $row['userEmail'];
+		$password = $row['userPass'];
+	} 
+
+	return array($username,$email,$password);
+
+	}
 	
 	public function logout()
 	{
 		session_destroy();
 		$_SESSION['userSession'] = false;
+		header("Location: index.php?logout");
+		exit;
 	}
 	
 	function send_mail($email,$message,$subject)

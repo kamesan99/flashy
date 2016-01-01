@@ -24,19 +24,15 @@ include('includes/header.php');
 						</div>
 						
 						<div class="rst-input-field">
-							<label for="acc-firstname">first name</label>
-							<input type="text" name="acc-firstname" id="acc-firstname" class="text required" />
-						</div>
-						<div class="rst-input-field">
-							<label for="acc-lastname">last name</label>
-							<input type="text" name="acc-lastname" id="acc-lastname" class="text required" />
+							<label for="acc-firstname">Username</label>
+							<input type="text" name="acc-firstname" id="acc-firstname" class="text required" value="<?=$username; ?>" />
 						</div>
 						<div class="rst-input-field">
 							<label for="acc-email">email name</label>
-							<input type="text" name="acc-email" id="acc-email" class="text required email" />
+							<input type="text" name="acc-email" id="acc-email" class="text required email" value="<?=$email; ?>" />
 						</div>
 						
-						<h2>Personal</h2>	
+						<h2>Password</h2>	
 						<div class="rst-input-field">
 							<label for="acc-password">password</label>
 							<input type="password" name="acc-password" id="acc-password" class="text required" />

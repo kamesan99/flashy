@@ -160,6 +160,77 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+    <script type="text/javascript" src="js/hammer.min.js"></script>
+
+    <script type="text/javascript">
+
+    var myElement = document.getElementById('myElement');
+
+	// create a simple instance
+	// by default, it only adds horizontal recognizers
+	var mc = new Hammer(myElement);
+
+	mc.add(new Hammer.Pan({ threshold: 200 }));
+
+	// listen to events...
+	mc.on("panleft", function(ev) {
+
+	    	event.preventDefault();
+            var maxNext = "<?php echo $total; ?>";
+            var startElement = $("#counter");
+            var value = parseInt(startElement.val());
+            if (value <= maxNext) {
+            startElement.val(value + 1)};
+            var formData = $("#shuffle").serialize();
+			var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
+	});
+
+	</script>
+
+	<script type="text/javascript">
+
+
+
+	// listen to events...
+	mc.on("panright", function(ev) {
+
+            // Stop the browser from submitting the form.
+            event.preventDefault();
+            // Serialize the form data.
+            var startElement = $("#counter");
+            var value = parseInt(startElement.val());
+            if (value > 1) {
+            startElement.val(value - 1)};
+            var formData = $("#shuffle").serialize();
+           	var category=$("#category").val();
+			var 	total= $("#total").val();
+			var 	counter =$("#counter").val();
+			$.post(
+			'display.php',
+			{
+				category:category,
+				total : total,
+				counter : counter
+			},
+			function(data){	
+				 $("#fc").empty().append(data);
+			});	
+	});
+
+	</script>
+
     <script type="text/javascript">
 
         $(document).ready(function() {
@@ -168,8 +239,8 @@
         });
         });
 
-		$("#next").click(function(event) { 
-		 	 event.preventDefault();
+		$("#next").click(function(event).bind { 
+		 	event.preventDefault();
             var maxNext = "<?php echo $total; ?>";
             var startElement = $("#counter");
             var value = parseInt(startElement.val());
