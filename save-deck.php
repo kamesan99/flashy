@@ -9,16 +9,16 @@ $user_login = new USER();
 
 if(isset($_POST['btn-save']) && isset($_SESSION['userSession']))
 {
-	$front = $_POST['card-front'];
-	$back = $_POST['card-back'];
+	$post_count = count($_POST['card-front']);
+	$rows = $_POST['rows'];
+/*	$front = $_POST['card-front'];
+	$back = $_POST['card-back'];*/
 	$userId = $_SESSION['userSession'];
 	$title = $_POST['deck-title'];
 	$description = $_POST['deck-description'];
 	$topic_id = $_POST['topic_id'];
-	$decks->create($front, $back, $userId, $topic_id, $title, $description);
-	$user_login->redirect('add-fc.php?saved');
-
-	var_dump($front);
+	$decks->create($post_count, $front, $back, $userId, $topic_id, $title, $description);
+	$user_login->redirect('add-fc.php?saved?count='.$post_count);
 /*	}
 	else
 	{

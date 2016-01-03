@@ -1,6 +1,13 @@
 <?php
 include('includes/header.php');
-?>
+
+if (isset($_GET['login_error']))
+{ ?>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+	Hmm...something went wrong. You could not be logged in :-(
+	</div>
+<?php } ?>
 				
 			</div>
 			<!-- Header banner -->

@@ -16,6 +16,8 @@ else if (isset($_GET['error']))
 	Hmm...something went wrong :-(
 	</div>
 <?php } ?>
+
+
 				
 			</div>
 			<!-- Header banner -->
@@ -51,7 +53,7 @@ else if (isset($_GET['error']))
 						
 						<h2>Add Flashcards</h2>	
 
-						<div class="col-sm-12">
+						<div class="col-sm-12 field_wrapper">
 							<div class="col-sm-6 rst-input-field">
 							<label for="acc-password">Front</label>
 							<input type="text" name="card-front" id="card-front" class="text required" />
@@ -61,7 +63,8 @@ else if (isset($_GET['error']))
 							<input type="text" name="card-back" id="card-front" class="text required" />
 							</div>
 						</div>
-						
+						<a href="javascript:void(0);" class="add_button" title="Add field"><img src="images/add-icon.png"/></a>
+
 						<div class="text-center">
 							<input type="submit" class="btn btn-primary" value="Save" name="btn-save" />
 						</div>

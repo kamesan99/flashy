@@ -77,7 +77,7 @@ class USER
 			}
 			else
 			{
-				header("Location: index.php?error");
+				header("Location: index.php?login_error");
 				exit;
 			}		
 		}

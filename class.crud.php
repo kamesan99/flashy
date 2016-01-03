@@ -331,7 +331,6 @@ class FlashCard
 	            <tr>
 	            <td>No more flascards.</td>
 	            </tr>
-	            
 	            <?php
 	  }
 

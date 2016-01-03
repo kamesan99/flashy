@@ -160,6 +160,28 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/select2.min.js"></script>
+
+    <!-- Add and remove input fields Flashcards  -->
+    <script type="text/javascript">
+		$(document).ready(function(){
+		    var maxField = 10; //Input fields increment limitation
+		    var addButton = $('.add_button'); //Add button selector
+		    var wrapper = $('.field_wrapper'); //Input field wrapper
+		    var fieldHTML = '<div><div class="col-sm-6 rst-input-field"><label for="front">Front</label><input type="text" name="rows[' + x + '][front]" id="card-front" class="text required"/></div><div class="col-sm-6 rst-input-field"><label for="back">Back</label><input type="text" name="rows[' + x + '][back]" id="card-back" class="text required"/></div><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="images/remove-icon.png"/></a></div></div>'; //New input field html 
+		    var x = 1; //Initial field counter is 1
+		    $(addButton).click(function(){ //Once add button is clicked
+		        if(x < maxField){ //Check maximum number of input fields
+		            x++; //Increment field counter
+		            $(wrapper).append(fieldHTML); // Add field html
+		        }
+		    });
+		    $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
+		        e.preventDefault();
+		        $(this).parent('div').remove(); //Remove field html
+		        x--; //Decrement field counter
+		    });
+		});
+	</script>
   
     <script type="text/javascript">
 

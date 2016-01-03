@@ -27,7 +27,11 @@ if(isset($_POST['btn-login']))
 
 	if($user_login->login($email,$upass) && $_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].'/account.php')
 	{
-		$user_login->redirect('account.php');
+		$user_login->redirect('account.php?login');
+	}
+	else
+	{
+		$user_login->redirect('index.php?login_error');
 	}
 }
 

@@ -1,6 +1,13 @@
 <?php
 include('includes/header.php');
-?>
+
+if(isset($_GET['login']))
+{ ?>
+	<div class="alert alert-success alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+	You have successfully logged in!
+	</div>
+<?php } ?>
 				
 			</div>
 			<!-- Header banner -->
