@@ -167,9 +167,27 @@ class FlashCard
 		$this->conn = $db;
     }
 
+    //Show all Categories
+    public function showTopics()
+    {
+
+		$query = "SELECT topic_id, topic_name FROM tbl_topics";
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute();
+
+		   while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+		   {
+		    
+		   echo "<option value='" . $row['topic_id'] . "'>" . $row['topic_name'] . "</option>";
+
+		   $topic = $row['topic_id'];
+		   }
+
+	}
+
     //Create a new Flashcard deck
 
-	public function create($front, $back, $cardId, $userId, $topic_id, $title, $description)
+	public function create($front, $back, $userId, $topic_id, $title, $description)
 	{
 		try
 		{
@@ -180,18 +198,15 @@ class FlashCard
 			$stmt->bindparam(":user_id",$userId);
 			$stmt->execute();
 			$id = $this->conn->lastInsertId();
-			echo $id;
 
-			$stmt = $this->conn->prepare("INSERT INTO tbl_cards(card_id, front, back, user_id, deck_id) VALUES(:card_id, :front, :back, :user_id, :deck_id)");
+			$stmt = $this->conn->prepare("INSERT INTO tbl_cards(front, back, user_id, deck_id) VALUES(:front, :back, :user_id, :deck_id)");
 			$stmt->bindparam(":front",$front);
 			$stmt->bindparam(":back",$back);
 			$stmt->bindparam(":user_id",$userId);
-			$stmt->bindparam(":card_id",$cardId);
 			$stmt->bindparam(":deck_id",$id);
 			$stmt->execute();
 
 			return true;
-			echo "New records created successfully";
 		}
 		catch(PDOException $e)
 		{
@@ -211,7 +226,7 @@ class FlashCard
 	$total = $stmt->rowCount();
 	return $total;
 	}	
-	//Count Flashscards specific deck end
+
 	//Count Flashcards overall
 	public function countCardsTotal()
 	{
@@ -221,8 +236,8 @@ class FlashCard
 	$total = $stmt->rowCount();
 	return $total;
 	}	
-	//Count Flashcards overall end
 
+	//Show all Decks
     public function showDecks($s)
     {
 

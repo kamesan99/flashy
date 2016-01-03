@@ -161,8 +161,14 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script src="js/select2.min.js"></script>
 
     <script type="text/javascript">
+
+    $("#dataCombo").selectpicker({
+
+	});
+  
 
     var myElement = document.getElementById('myElement');
 
@@ -202,7 +208,6 @@
 	<script type="text/javascript">
 
 
-
 	// listen to events...
 	mc.on("panright", function(ev) {
 
@@ -234,6 +239,12 @@
     <script type="text/javascript">
 
         $(document).ready(function() {
+
+        // Select
+        $(".js-example-basic-single").select2();
+		});
+
+
         $('.flashcard').on('click', function() {
         $('.flashcard').toggleClass('flipped');
         });

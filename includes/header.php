@@ -241,7 +241,7 @@ $percentage = ($count / $total)*100;
 									</li> -->
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
-								<a class="btn btn-mds btn-success" type="button" href="register.php">Register</a>
+								<a class="btn btn-mds btn-success" type="button" href="add-fc.php">Create Flashcards</a>
 							</nav>
 					</div>
 				</div>
