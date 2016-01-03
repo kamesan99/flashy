@@ -45,6 +45,7 @@ else if($count=$total)
   <div class='flashcard'>
     <div class='front'>
       <p>No more flashcards</p>
+      <a href="detail.php?c=<?php echo $c ?>">Restart</a>
     </div>
   </div>  
 </div>

@@ -180,7 +180,7 @@ class FlashCard
 		    
 		   echo "<option value='" . $row['topic_id'] . "'>" . $row['topic_name'] . "</option>";
 
-		   $topic = $row['topic_id'];
+		   $topic =$row['topic_id'];
 		   }
 
 	}
@@ -331,6 +331,7 @@ class FlashCard
 	            <tr>
 	            <td>No more flascards.</td>
 	            </tr>
+	            
 	            <?php
 	  }
 
