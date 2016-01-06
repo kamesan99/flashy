@@ -187,32 +187,42 @@ class FlashCard
 
     //Create a new Flashcard deck
 
-	public function create($front, $back, $userId, $topic_id, $title, $description)
+	public function create($rows, $userId, $topic_id, $title, $description)
 	{
-		try
-		{
-			$stmt = $this->conn->prepare("INSERT INTO tbl_decks(deck_name, description, topic_id, user_id) VALUES(:deck_name, :description, :topic_id, :user_id)");
-			$stmt->bindparam(":deck_name",$title);
-			$stmt->bindparam(":description",$description);
-			$stmt->bindparam(":topic_id",$topic_id);
-			$stmt->bindparam(":user_id",$userId);
-			$stmt->execute();
-			$id = $this->conn->lastInsertId();
 
-			$stmt = $this->conn->prepare("INSERT INTO tbl_cards(front, back, user_id, deck_id) VALUES(:front, :back, :user_id, :deck_id)");
-			$stmt->bindparam(":front",$front);
-			$stmt->bindparam(":back",$back);
-			$stmt->bindparam(":user_id",$userId);
-			$stmt->bindparam(":deck_id",$id);
-			$stmt->execute();
+			try
+			{
+				$stmt = $this->conn->prepare("INSERT INTO tbl_decks(deck_name, description, topic_id, user_id) VALUES(:deck_name, :description, :topic_id, :user_id)");
+				$stmt->bindparam(":deck_name",$title);
+				$stmt->bindparam(":description",$description);
+				$stmt->bindparam(":topic_id",$topic_id);
+				$stmt->bindparam(":user_id",$userId);
+				$stmt->execute();
+				$id = $this->conn->lastInsertId();
 
-			return true;
-		}
-		catch(PDOException $e)
-		{
-			echo $e->getMessage();	
-			return false;
-		}
+
+			foreach ($rows as $key => $flashcard) {
+				echo $key . ": " . $flashcard['front'];
+				echo $key . ": " . $flashcard['back'];
+
+				$stmt = $this->conn->prepare("INSERT INTO tbl_cards(front, back, user_id, deck_id) VALUES(:front, :back, :user_id, :deck_id)");
+				$stmt->bindparam(":user_id",$userId);
+				$stmt->bindparam(":deck_id",$id);
+				$stmt->bindparam(":front",$flashcard['front']);
+				$stmt->bindparam(":back",$flashcard['back']);
+				$stmt->execute();
+			}
+				
+
+				return true;
+			}
+
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();	
+				return false;
+			}
+	  
 		
 	}
 

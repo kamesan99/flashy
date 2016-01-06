@@ -31,6 +31,7 @@ include('includes/header.php');
 		<div class="clearfix"></div><br />
 
 
+
 		<div id="fc" class="container">
 			<div class='first stage'>
 			  <div class='flashcard'>
