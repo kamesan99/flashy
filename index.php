@@ -32,17 +32,16 @@ if (isset($_GET['login_error']))
 								<span>Toggle navigation</span>
 							</button>
 							<ul>
-								<li><a href="about.html">About</a></li>
-								<li><a href="flashcards.php">Flashcards</a></li>
-<!-- 								<li>
-									<a href="#">Pages</a>
+								
+								<li><a href="flashcards.php?s=">Flashcards</a></li>
+								<li>
+									<a href="#">Categories</a>
 									<ul>
-										<li><a href="prices.html">Prices</a></li>
-										<li><a href="category.html">Category</a></li>
-										<li><a href="shortcodes.html">Shortcodes</a></li>
-										<li><a href="faq.html">FAQs</a></li>
+										<li><a href="flashcards.php?s=">Languages</a></li>
+										<li><a href="flashcards.php?s=">Biology</a></li>
+										<li><a href="flashcards.php?s=">Mathematics</a></li>
 									</ul>
-								</li> -->
+								</li> 
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
 							<a class="btn btn-mds btn-success" type="button" href="register.php">Register</a>
@@ -92,235 +91,44 @@ if (isset($_GET['login_error']))
 		<!-- Main page -->
 		<section>
 			
-			<!-- What we have -->
-			<div id="rst-home-whatwehave" class="wpb_row">
-				<div class="container">
-					<div class="rst-group-title text-center">
-						<span>About</span>
-						<h3>What We Have?</h3>
-						<p>Duis mattis semper risus sit amet porttitor turpis egestas vitae</p>
-					</div>
-					<div>
-						<div class="rst-home-whatwehave text-center wow animated slideInLeft">
-							<div class="rst-borderdashed">
-								<i class="pe-7s-search"></i>
-							</div>
-							<h5>Find Your article</h5>
-							<p>Duis posuere nec libero efficitur maecenas ut aliquam augue dapibus elit nullam eleifend odio aliquam gravida mauris.</p>
-						</div>
-						<div class="rst-home-whatwehave text-center ">
-							<div class="rst-borderdashed">
-								<i class="pe-7s-note2"></i>
-							</div>
-							<h5>Knowledge Base</h5>
-							<p>Duis posuere nec libero efficitur maecenas ut aliquam augue dapibus elit nullam eleifend odio aliquam gravida mauris.</p>
-						</div>
-						<div class="rst-home-whatwehave text-center wow animated slideInRight">
-							<div class="rst-borderdashed ">
-								<i class="pe-7s-wallet "></i>
-							</div>
-							<h5>Easy Payment</h5>
-							<p>Duis posuere nec libero efficitur maecenas ut aliquam augue dapibus elit nullam eleifend odio aliquam gravida mauris.</p>
-						</div>
-					</div>
-				</div>
-				<div class="rst-scroll-down text-center">
-					<a href="#"><i class="fa fa-arrow-down"></i></a>
-				</div>
-			</div>
-			<!-- What we have -->
-			
 			<!-- Support products -->
 			<div id="rst-support-products" class="wpb_row">
 				<div class="container">
 					<div class="rst-group-title text-center">
-						<span>helpdesk</span>
-						<h3>Support Products</h3>
-						<p>Duis mattis semper risus sit amet porttitor turpis egestas vitae</p>
+						<span>Learn with</span>
+						<h3>Flashcards</h3>
+						<p>Never forget anything anymore</p>
 					</div>
-					
-					<!-- Support products slider -->
-					<div class="owl-carousel rst-whatwehave-owl rst-home-sp-products-owl">
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="rst-product-box rst-product-box-2">
-									<div class="rst-box-image">
-										<img src="http://placehold.it/370x183" alt="" />
-										<div class="rst-box-overlay ">
-											<a class="btn btn-primary" href="#">support now</a>
-										</div>
-									</div>
-									<div class="rst-box-data">
-										<span>Psd</span>
-										<h4><a href="product-single.html">Run road</a></h4>
-										<div class="rst-box-metadata">
-											<p>Duis egestas orci eros venenatis tincidunt nulla sagittis suspendisse vitae facilisis erat integer dictum imperdiet.</p>
-											<img src="http://placehold.it/299x299" alt="" />
-											<span>Updated 1 day ago</span>
-											<div class="clear"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Support products slider -->
-					
-				</div>
+
 				<div class="rst-scroll-down text-center">
 					<a href="#"><i class="fa fa-arrow-down"></i></a>
 				</div>
 			</div>
 			<!-- Support products -->
-			
-			<!-- Who we are -->
-			<div id="rst-home-whoweare" class="wpb_row">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="rst-group-title text-left wow animated slideInLeft">
-								<span>Story</span>
-								<h3>Who We Are?</h3>
-								<p>Duis ut velit tincidunt, pretium augue et pharetra tellus nulla vulputate feugiat pulvinar nunc non facilisis ex vivamus hendrerit mi ut metus maximus eu pellentesque.</p>
-							</div>
-							<a href="#" class="btn">read more</a>
-						</div>
-						<div class="col-sm-6 wow animated zoomIn">
-							<img src="http://placehold.it/590x607" alt="" />
-						</div>
-					</div>
-				</div>
-				<div class="rst-scroll-down text-center">
-					<a href="#"><i class="fa fa-arrow-down"></i></a>
-				</div>
-			</div>
-			<!-- Who we are -->
 			
 			<!-- What about -->
 			<div id="rst-home-whatabout" class="wpb_row">
 				<div class="container">
 					<div class="rst-group-title text-center">
 						<span>Fun fact</span>
-						<h3>What About?</h3>
-						<p>Duis mattis semper risus sit amet porttitor turpis egestas vitae</p>
+						<h3>Why do flashcards work?</h3>
+						<p>Flashcards help to create stronger neuron connections</p>
 					</div>
 					<div class="rst-home-funfacts clearfix">
 						<div class="rst-funfact">
-							<span class="rst-funnumber counter">10,000</span>
+							<span class="rst-funnumber counter"><?php echo $decks->countDecksTotal();?></span>
 							<div class="rst-funfact-line"></div>
-							<h5>Articles</h5>
+							<h5>Flashcard Decks</h5>
 						</div>
 						<div class="rst-funfact">
-							<span class="rst-funnumber counter">1,300,000</span>
+							<span class="rst-funnumber counter"><?php echo $decks->countCardsTotal();?></span>
 							<div class="rst-funfact-line"></div>
-							<h5>Register users</h5>
+							<h5>Flashcards</h5>
 						</div>
 						<div class="rst-funfact">
-							<span class="rst-funnumber counter">3,000</span>
+							<span class="rst-funnumber counter"><?php echo $decks->countUsersTotal();?></span>
 							<div class="rst-funfact-line"></div>
-							<h5>agencies</h5>
+							<h5>Users</h5>
 						</div>
 					</div>
 				</div>
@@ -330,29 +138,7 @@ if (isset($_GET['login_error']))
 			</div>
 			<!-- What about -->
 			
-			<!-- Live chat -->
-			<div id="rst-home-livechat" class="wpb_row">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 wow animated slideInLeft">
-							<img src="http://placehold.it/516x808" alt="" />
-						</div>
-						<div class="col-sm-6 wow animated slideInRight">
-							<div class="rst-group-title text-left">
-								<span>Support</span>
-								<h3>Start Live Chat</h3>
-								<p>Duis ut velit tincidunt, pretium augue et pharetra tellus nulla vulputate feugiat pulvinar nunc non facilisis ex vivamus hendrerit mi ut metus maximus eu pellentesque.</p>
-							</div>
-							<a href="#" class="btn btn-primary">Support now</a>
-						</div>
-					</div>
-				</div>
-				<div class="rst-scroll-down text-center">
-					<a href="#"><i class="fa fa-arrow-down"></i></a>
-				</div>
-			</div>
-			<!-- Live chat -->
-			
+
 			<!-- What people say -->
 			<div id="rst-home-whatpeoplesay" class="wpb_row">
 				<div class="container">
@@ -421,49 +207,7 @@ if (isset($_GET['login_error']))
 				</div>
 			</div>			
 			<!-- What people say -->
-			
-			<!-- Knowledge Base -->
-			<div id="rst-knowledgebase" class="wpb_row">
-				<div class="container">
-					<div class="rst-group-title text-center">
-						<span>helpdesk</span>
-						<h3>Knowledge Base</h3>
-						<p>Duis mattis semper risus sit amet porttitor turpis egestas vitae</p>
-					</div>
-				
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="rst-knowledgebase wow animated slideInUp">
-								<span class="rst-knowledge-number">01 <b>.</b></span>
-								<span>design</span>
-								<h5>This is article headline</h5>
-								<p>Duis ut velit tincidunt pretium augue et pharetra tellus nulla vulputate feugiat pulvinar nunc non facilisis ex vivamus hendrerit mi ut metus maximus.</p>
-								<a href="#" class="btn">read more</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="rst-knowledgebase wow animated slideInUp">
-								<span class="rst-knowledge-number">02<b>.</b></span>
-								<span>design</span>
-								<h5>This is article headline</h5>
-								<p>Duis ut velit tincidunt pretium augue et pharetra tellus nulla vulputate feugiat pulvinar nunc non facilisis ex vivamus hendrerit mi ut metus maximus.</p>
-								<a href="#" class="btn">read more</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="rst-knowledgebase wow animated slideInUp">
-								<span class="rst-knowledge-number">03<b>.</b></span>
-								<span>design</span>
-								<h5>This is article headline</h5>
-								<p>Duis ut velit tincidunt pretium augue et pharetra tellus nulla vulputate feugiat pulvinar nunc non facilisis ex vivamus hendrerit mi ut metus maximus.</p>
-								<a href="#" class="btn">read more</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Knowledge Base -->
-
+		
 
 
 <?php

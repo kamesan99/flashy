@@ -232,18 +232,15 @@ $percentage = ($count / $total)*100;
 									<span>Toggle navigation</span>
 								</button>
 								<ul>
-									<li><a href="about.html">About</a></li>
 									<li class="current-menu-item"><a href="flashcards.php">Flashcards</a></li>
-			<!-- 					<li>
-										<a href="#">Pages</a>
+									<li class="current-menu-item">
+										<a href="#">Categories</a>
 										<ul>
-											<li><a href="prices.html">Prices</a></li>
-											<li><a href="category.html">Category</a></li>
-											<li><a href="shortcodes.html">Shortcodes</a></li>
-											<li><a href="faq.html">FAQs</a></li>
+											<li><a href="flashcards.php?c=languages">Languages</a></li>
+											<li><a href="flashcards.php?c=biology">Biology</a></li>
 										</ul>
-									</li> -->
-									<li><a href="contact.html">Contact</a></li>
+									</li>
+									<li class="current-menu-item"><a href="">About us</a></li>
 								</ul>
 								<a class="btn btn-mds btn-success" type="button" href="add-fc.php">Create Flashcards</a>
 							</nav>

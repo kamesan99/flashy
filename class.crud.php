@@ -245,7 +245,27 @@ class FlashCard
 	$stmt->execute();
 	$total = $stmt->rowCount();
 	return $total;
-	}	
+	}
+
+	//Count Decks overall
+	public function countDecksTotal()
+	{
+	$query = "SELECT deck_id FROM tbl_decks";
+	$stmt = $this->conn->prepare($query);
+	$stmt->execute();
+	$total = $stmt->rowCount();
+	return $total;
+	}
+
+	//Count Decks overall
+	public function countUsersTotal()
+	{
+	$query = "SELECT userID FROM tbl_users";
+	$stmt = $this->conn->prepare($query);
+	$stmt->execute();
+	$total = $stmt->rowCount();
+	return $total;
+	}		
 
 	//Show all Decks
     public function showDecks($s)
@@ -278,7 +298,7 @@ class FlashCard
 											<div class="rst-box-image">
 												<img src="http://placehold.it/200x100" alt="" />
 												<div class="rst-box-overlay ">
-													<a class="btn btn-primary" href="#">Practice flashcards</a>
+													<a class="btn btn-primary" href="detail.php?c=<?php print $row['deck_id']; ?>">Practice flashcards</a>
 													<a class="btn btn-success" href="#">Test flashcards</a>
 												</div>
 											</div>
