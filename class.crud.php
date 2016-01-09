@@ -270,6 +270,7 @@ class FlashCard
 	//Show all Decks
     public function showDecks($s)
     {
+    	$strMax = 28;
 
 		$query =
 
@@ -295,23 +296,21 @@ class FlashCard
 
 		    						<div class="col-sm-4 col-xs-6">
 										<div class="rst-product-box">
-											<div class="rst-box-image">
-												<img src="http://placehold.it/200x100" alt="" />
+<!-- 											<div class="rst-box-image">
+												<img src="images/card.png" alt="" />
 												<div class="rst-box-overlay ">
-													<a class="btn btn-primary" href="detail.php?c=<?php print $row['deck_id']; ?>">Practice flashcards</a>
+													<a class="btn btn-primary" href="detail.php?c=<?php /*print $row['deck_id'];*/ ?>">Practice flashcards</a>
 													<a class="btn btn-success" href="#">Test flashcards</a>
 												</div>
-											</div>
-											<div class="rst-box-data">
-												<h4><a href="detail.php?c=<?php print $row['deck_id']; ?>"><?php print($row['deck_name']); ?></a></h4>
+											</div> -->
+											<div class="rst-box-data boxi">
+												<h4><a href="detail.php?c=<?php print $row['deck_id']; ?>"><?php print $row['deck_name'] = ((strlen($row['deck_name']) < $strMax-3) ? $row['deck_name'] : substr($row['deck_name'], 0, $strMax-3)."...");?></a></h4>
+												<p class="topicClass"><?php print($row['topic_name']); ?></p>
+												<p class="userNrOfCards"><?php print $this->countCards($row['deck_id']); ?> cards</p>
+												<p class="practiceClass"><a class="btn-sm btn-success" href="detail.php?c=<?php print $row['deck_id']; ?>">Practice flashcards</a></p>
+												<p class="practiceClass"><a class="btn-sm btn-info" href="detail.php?c=<?php print $row['deck_id']; ?>">Test flashcards</a></p>
 												<p class="userCard">by <?php print($row['userName']); ?></p>
-												<p class="userNrOfCards"><?php print $this->countCards($row['deck_id']); ?></p>
-												<div class="rst-box-metadata">
-													<p>User: <?php print($row['userName']); ?></p>
-													<p>Topic: <?php print($row['topic_name']); ?></p>
-													<p><?php print $this->countCards($row['deck_id']); ?> Flashcards</p>
-													<div class="clear"></div>
-												</div>
+
 											</div>
 										</div>
 									</div>

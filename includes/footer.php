@@ -81,7 +81,7 @@
 					<div class="row">
 						<div class="col-sm-3">
 							<div class="rst-copyright">
-								<p>© Skeets 2015. All Right Reserved.</p>
+								<p>&copy; Heroflip 2016. All Rights Reserved.</p>
 							</div>
 						</div>
 						<div class="col-sm-6">

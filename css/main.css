@@ -637,7 +637,7 @@ p {
 }
 .rst-header-banner.rst-banner-background.rst-banner-2
 {
-  background: url('https://placeholdit.imgix.net/~text?txtsize=75&txt=%20&w=300&h=300&txttrack=0') no-repeat top center;
+  background: url('../images/biblio.jpg') no-repeat top center;
   background-size: cover;
 }
 .rst-back-post a {
@@ -2537,8 +2537,8 @@ cite {
   transition: all 0.3s ease-out;
 }
 .rst-box-data {
-  border: 1px solid #f0f2f1;
-  border-top: 0;
+  border: 2px solid #f0f2f1;
+  min-height: 200px;
 }
 .rst-box-data p {
   color: #606873;
@@ -2550,12 +2550,30 @@ cite {
   line-height: 25px;
   margin: 2px 0;
   padding: 0px 10px 2px;
+  text-align: right;
 }
 .userNrOfCards {
   color: #606873;
+  font-family: Montserrat;
+  font-size: 20px;
   line-height: 25px;
-  text-align: right;
+  text-align: left;
+  margin: 0;
+  padding: 2px 10px 8px;
 }
+.topicClass {
+  color: #369cdc;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: left;
+  margin: 0;
+  padding: 2px 10px 8px;
+}
+.practiceClass {
+  text-align: left;
+  padding: 2px 10px 8px;
+}
+
 .rst-box-metadata
 {
   border-top: 1px solid #f0f2f1;
@@ -2569,7 +2587,7 @@ cite {
 }
 .rst-box-data h4 a
 {
-  color: #233141;
+  color: #000000;
 }
 .rst-product-box .rst-box-metadata .rst-meta 
 {
@@ -3513,6 +3531,9 @@ cite {
   display: inline-block;
   float: right;
   margin: 12px 0 0;
+}
+.boxi {
+  min-height:250px;
 }
 .owl-theme.rst-home-sp-products-owl .owl-controls {
   margin-top: 0;

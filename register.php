@@ -5,6 +5,15 @@ require_once 'class.user.php';
 
 $reg_user = new USER();
 
+if (isset($_GET['needed_login_error']))
+{ ?>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+	You need to be registered &amp; logged in to create flashcards.
+	</div>
+<?php } ?>
+
+<?php
 if(isset($_POST['btn-signup']))
 {
 	$uname = trim($_POST['txtuname']);

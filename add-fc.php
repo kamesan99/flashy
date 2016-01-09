@@ -1,4 +1,5 @@
 <?php
+$memberOnly = true;
 include('includes/header.php');
 
 if(isset($_GET['saved']))

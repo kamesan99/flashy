@@ -70,7 +70,7 @@ include('includes/header.php');
 			        <button class="btn btn-large btn-info" id="previous" name="previous" type="submit">Previous</button>
 			        <button class="btn btn-large btn-info" id="next" name="next" type="submit" class="slide">Next</button>
 			        <button class="btn btn-large hidden-xs hidden-sm btn-info" id="last" name="last" type="submit" class="slide">Last</button>
-			        <a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
+			        <a href="flashcards.php?s=" class="btn btn-large btn-info"> &nbsp; Go back</a>
 			        <p></p>
 			    </form>
 			<!-- Flashcard Menu end -->

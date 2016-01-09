@@ -8,6 +8,12 @@ require_once 'class.crud.php';
 $decks = new FlashCard();
 $user_login = new USER();
 
+if (isset($memberOnly)) {
+    if (empty($_SESSION['userSession'])) {
+      header('Location: register.php?needed_login_error');
+      exit;
+    }
+}
 
 /*if($user_login->is_logged_in()!="" && $_SERVER['HTTP_REFERER'] != 'http://'.$_SERVER['HTTP_HOST'].'/account.php')
 {
@@ -78,7 +84,7 @@ $percentage = ($count / $total)*100;
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index - Skeets</title>
+    <title>Index - Heroflip</title>
     <meta name="description" content="Angle - Blog is a clean and minimalist photography blog perfectly designed for photographers and bloggers. Slimply is beautiful, clean and very classic design.">
     <meta name="keywords" content="photoblog, portfolio, photography, photographer, unique, creative, blog, minimal, beautiful theme">
     <meta name="author" content="Laza Themes">
